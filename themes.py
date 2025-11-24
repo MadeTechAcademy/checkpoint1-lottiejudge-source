@@ -4,7 +4,8 @@ class Duties:
          
     def create_duty_list(self):
         for duty in self.duties:
-            printed_list = print("{0}\n".format(duty))
+            print("{0}\n".format(duty))
+    
 
 devops_apprenticeship_duty_list = [
     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
@@ -32,7 +33,6 @@ if __name__=="__main__":
     if user_duty_selection == '1':
         all_duties.create_duty_list()
 
-# TODO: Put into a class for OOP, then test this. 
 #  TODO: HTML file and testing - do this first? See if pattern emerges? 
 #  TODO: diff duties for diff times - testing
 # TODO: flask front end innit - testin

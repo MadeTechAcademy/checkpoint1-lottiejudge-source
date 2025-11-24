@@ -23,3 +23,6 @@ def test_duty_list_class_output(capsys):
     duty_test_instance.create_duty_list()
     captured = capsys.readouterr()
     assert correct_list_of_duties[0] in captured.out
+
+def test_duties_to_HTML_output(self):
+    # write test for html output. Then changfe the above test? 
