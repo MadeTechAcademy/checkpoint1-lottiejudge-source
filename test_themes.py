@@ -1,7 +1,7 @@
 from themes import devops_apprenticeship_duty_list
+from themes import Duties
 
-def test_duty_list():
-    correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
+correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.", 
     "Duty 3 Engage in productive pair/mob programming to underpin the practice of peer review.", "Duty 4 Work as part of an agile team, and explore new ways of working, rapidly responding to changing user needs and with a relentless focus on the user experience. Understand the importance of continual improvement within a blameless culture.", 
     "Duty 5 Build and operate a Continuous Integration (CI) capability, employing version control of source code and related artefacts.", "Duty 6 Implement and improve release automation & orchestration, often using Application Programming Interfaces (API), as part of a continuous delivery and continuous deployment pipeline, ensuring that team(s) are able to deploy new code rapidly and safely.",
@@ -12,8 +12,14 @@ def test_duty_list():
     "Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.",
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.", "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience."
     ]
+
+
+def test_duty_list():
     assert len(devops_apprenticeship_duty_list) == 13
     assert devops_apprenticeship_duty_list == correct_list_of_duties
 
-def test_duty_list_class():
-    assert  {duties.html} == 
+def test_duty_list_class_output(capsys):
+    duty_test_instance = Duties(correct_list_of_duties)
+    duty_test_instance.create_duty_list()
+    captured = capsys.readouterr()
+    assert correct_list_of_duties[0] in captured.out
