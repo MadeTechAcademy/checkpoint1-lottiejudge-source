@@ -14,3 +14,6 @@ def test_duty_list():
     ]
     assert len(devops_apprenticeship_duty_list) == 13
     assert devops_apprenticeship_duty_list == correct_list_of_duties
+
+def test_duty_list_class():
+    assert  {duties.html} == 

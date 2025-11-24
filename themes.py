@@ -1,3 +1,12 @@
+class Duties:
+    def __init__(self, duties):
+         self.duties = duties
+         
+    def create_duty_list(self):
+        for duty in self.duties:
+            printed_list = print("{0}\n".format(duty))
+        return printed_list
+
 devops_apprenticeship_duty_list = [
     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.",
@@ -11,11 +20,9 @@ devops_apprenticeship_duty_list = [
     "Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.",
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.",
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
-]#list of duties
+]
 
-def create_duty_list():
-    for duty in devops_apprenticeship_duty_list:
-        print("{0}\n".format(duty))
+all_duties = Duties(devops_apprenticeship_duty_list)
 
 if __name__=="__main__":
     user_duty_selection = input("""
@@ -24,4 +31,9 @@ if __name__=="__main__":
     Enter your choice:
     """)
     if user_duty_selection == '1':
-        create_duty_list()
+        Duties.create_duty_list(all_duties)
+
+# TODO: Put into a class for OOP, then test this. 
+#  TODO: HTML file and testing - do this first? See if pattern emerges? 
+#  TODO: diff duties for diff times - testing
+# TODO: flask front end innit - testin
