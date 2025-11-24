@@ -18,10 +18,10 @@ def create_duty_list():
         print("{0}\n".format(duty))
 
 if __name__=="__main__":
-    x = input("""
+    user_duty_selection = input("""
     Welcome to apprentice themes!\n
     Press (1) to list all the duties\n
     Enter your choice:
     """)
-    if x == '1':
+    if user_duty_selection == '1':
         create_duty_list()
