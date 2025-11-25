@@ -1,17 +1,22 @@
 from duties import devops_apprenticeship_duty_list
+import jinja2
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+env = jinja2.Environment(loader=FileSystemLoader("templates/"))
+template = env.get_template("duties.html")
 
 class Duties:
     def __init__(self, duties):
          self.duties = duties
          
     def create_duty_list(self):
-        create_doc = open("all_duties.html", "w")
-        duty_list = '<ul>\n'
         for duty in self.duties:
-            duty_list += '<li>{}</li>\n'.format(duty)
-            print("{0}\n".format(duty))
-        duty_list +='</ul>'
-        create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \n</title>\n</head>\n <body>\n{duty_list}\n</body>\n</html>")
+            filename = "all_duties.html"
+            content = template.render(
+                duty=duty
+            )
+            with open(filename, mode="w", encoding="utf-8") as message:
+                message.write(content)
 
 all_duties = Duties(devops_apprenticeship_duty_list)
 

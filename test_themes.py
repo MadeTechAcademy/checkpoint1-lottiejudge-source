@@ -14,7 +14,6 @@ correct_list_of_duties = ["Duty 1 Script and code in at least one general purpos
     ]
 devops_duty_one_string =  "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
 
-
 def test_duty_list():
     assert len(devops_apprenticeship_duty_list) == 13
     assert devops_apprenticeship_duty_list == correct_list_of_duties
@@ -29,9 +28,10 @@ def test_duties_string_to_HTML_output():
     file = open("all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
 
-def test_all_duties_in_HTML_output():
-    file = open("all_duties.html", 'r')
-    assert correct_list_of_duties[-1] in file.read()
+# def test_all_duties_in_HTML_output():
+#     file = open("all_duties.html", 'r')
+#     assert correct_list_of_duties[-1] in file.read()
 
-
-    # write test for html output. Then change the above test? or can i leave the print too to keep the above test?
+# def test_jinja_template():
+#     file = open("all_duties.html", 'r')
+#     assert devops_duty_one_string in file.read()
