@@ -12,7 +12,7 @@ correct_list_of_duties = ["Duty 1 Script and code in at least one general purpos
     "Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.",
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.", "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience."
     ]
-devops_duty_string =     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
+devops_duty_one_string =     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
 
 
 def test_duty_list():
@@ -27,7 +27,7 @@ def test_duty_list_class_output(capsys):
 
 def test_duties_to_HTML_output():
     file = open("all_duties.html", 'r')
-    assert devops_duty_string in file.read()
+    assert devops_duty_one_string in file.read()
 
 
     # write test for html output. Then change the above test? or can i leave the print too to keep the above test?
