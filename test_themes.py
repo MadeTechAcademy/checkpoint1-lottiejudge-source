@@ -13,8 +13,6 @@ correct_list_of_duties = ["Duty 1 Script and code in at least one general purpos
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.", "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience."
     ]
 devops_duty_one_string =  "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
-devops_duty_one_string =     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
-
 
 def test_duty_list():
     assert len(devops_apprenticeship_duty_list) == 13

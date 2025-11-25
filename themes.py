@@ -1,17 +1,24 @@
 from duties import devops_apprenticeship_duty_list
+from jinja2 import Template
 
 class Duties:
     def __init__(self, duties):
          self.duties = duties
          
     def create_duty_list(self):
-        create_doc = open("all_duties.html", "w")
+        File = open('templates/template_duties.html', 'r')
+        content = File.read()
+        File.close()
         duty_list = '<ul>\n'
         for duty in self.duties:
             duty_list += '<li>{}</li>\n'.format(duty)
             print("{0}\n".format(duty))
         duty_list +='</ul>'
-        create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \n</title>\n</head>\n <body>\n{duty_list}\n</body>\n</html>")
+        template = Template(content)
+        rendered_form = template.render(duty_list=duty_list)
+        output = open('all_duties.html', 'w')
+        output.write(rendered_form)
+        output.close()
 
 all_duties = Duties(devops_apprenticeship_duty_list)
 
