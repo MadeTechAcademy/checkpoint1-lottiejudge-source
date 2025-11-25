@@ -24,5 +24,9 @@ def test_duty_list_class_output(capsys):
     captured = capsys.readouterr()
     assert correct_list_of_duties[0] in captured.out
 
-def test_duties_to_HTML_output(self):
-    # write test for html output. Then changfe the above test? 
+def test_duties_to_HTML_output():
+    file = open("all_duties.html", 'r')
+    assert correct_list_of_duties in file.read()
+
+
+    # write test for html output. Then change the above test? or can i leave the print too to keep the above test?
