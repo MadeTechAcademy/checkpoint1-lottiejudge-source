@@ -27,6 +27,3 @@ def test_duty_list_class_output(capsys):
 def test_duties_to_HTML_output():
     file = open("all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
-
-
-    # write test for html output. Then change the above test? or can i leave the print too to keep the above test?

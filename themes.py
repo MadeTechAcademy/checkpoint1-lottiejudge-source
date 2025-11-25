@@ -31,6 +31,8 @@ if __name__=="__main__":
     if user_duty_selection == '1':
         all_duties.create_duty_list()
 
-#  TODO: HTML file and testing - do this first? See if pattern emerges? 
+#  TODO: Can i sepearte out the input from the class? is that necessary 
+# TODO:L https://www.geeksforgeeks.org/python/getting-started-with-jinja-template/ - this should hopefully make the ninja syntax shorter?
+#  TODO: Make HTML better using CSS file. Test this? Should i like test it;s in futura etc?
 #  TODO: diff duties for diff times - testing
-# TODO: flask front end innit - testin
+# TODO: flask front end innit - testing
