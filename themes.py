@@ -5,8 +5,7 @@ class Duties:
     def create_duty_list(self):
         for duty in self.duties:
             create_doc = open("all_duties.html", "w")
-            create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \
-           </title>\n</head> <body> <li>{duty}</li></body></html>")
+            create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \n</title>\n</head>\n <body>\n <li>{duty}</li>\n</body>\n</html>")
             print("{0}\n".format(duty))
     
 
