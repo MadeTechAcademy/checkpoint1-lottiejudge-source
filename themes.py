@@ -1,9 +1,4 @@
 from duties import devops_apprenticeship_duty_list
-import jinja2
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-
-env = jinja2.Environment(loader=FileSystemLoader("templates/"))
-template = env.get_template("duties.html")
 
 class Duties:
     def __init__(self, duties):
@@ -18,6 +13,8 @@ class Duties:
             with open(filename, mode="w", encoding="utf-8") as message:
                 message.write(content)
             print("{0}\n".format(duty))
+        duty_list +='</ul>'
+        create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \n</title>\n</head>\n <body>\n{duty_list}\n</body>\n</html>")
 
 all_duties = Duties(devops_apprenticeship_duty_list)
 

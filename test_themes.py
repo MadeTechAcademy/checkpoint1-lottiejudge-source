@@ -1,4 +1,4 @@
-from duties import devops_apprenticeship_duty_list
+from themes import devops_apprenticeship_duty_list
 from themes import Duties
 
 correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
@@ -13,6 +13,8 @@ correct_list_of_duties = ["Duty 1 Script and code in at least one general purpos
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.", "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience."
     ]
 devops_duty_one_string =  "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
+devops_duty_one_string =     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
+
 
 def test_duty_list():
     assert len(devops_apprenticeship_duty_list) == 13
@@ -24,14 +26,9 @@ def test_duty_list_class_output(capsys):
     captured = capsys.readouterr()
     assert correct_list_of_duties[0] in captured.out
 
-def test_duties_string_to_HTML_output():
+def test_duties_to_HTML_output():
     file = open("all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
 
-# def test_all_duties_in_HTML_output():
-#     file = open("all_duties.html", 'r')
-#     assert correct_list_of_duties[-1] in file.read()
 
-# def test_jinja_template():
-#     file = open("all_duties.html", 'r')
-#     assert devops_duty_one_string in file.read()
+    # write test for html output. Then change the above test? or can i leave the print too to keep the above test?
