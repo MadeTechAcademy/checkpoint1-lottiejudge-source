@@ -17,6 +17,7 @@ class Duties:
             )
             with open(filename, mode="w", encoding="utf-8") as message:
                 message.write(content)
+            print("{0}\n".format(duty))
 
 all_duties = Duties(devops_apprenticeship_duty_list)
 
