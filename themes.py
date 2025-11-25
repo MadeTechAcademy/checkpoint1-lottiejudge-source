@@ -5,13 +5,10 @@ class Duties:
          self.duties = duties
          
     def create_duty_list(self):
+        create_doc = open("all_duties.html", "w")
+        duty_list = '<ul>\n'
         for duty in self.duties:
-            filename = "all_duties.html"
-            content = template.render(
-                duty=duty
-            )
-            with open(filename, mode="w", encoding="utf-8") as message:
-                message.write(content)
+            duty_list += '<li>{}</li>\n'.format(duty)
             print("{0}\n".format(duty))
         duty_list +='</ul>'
         create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \n</title>\n</head>\n <body>\n{duty_list}\n</body>\n</html>")
