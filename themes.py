@@ -4,10 +4,14 @@ class Duties:
          
     def create_duty_list(self):
         create_doc = open("all_duties.html", "w")
+        duty_list = '<ul>\n'
         for duty in self.duties:
-            create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \n</title>\n</head>\n <body>\n<ul> <li>{duty}</li></ul>\n</body>\n</html>")
-            
+            duty_list += '<li>{}</li>\n'.format(duty)
             print("{0}\n".format(duty))
+        duty_list +='</ul>'
+        create_doc.write(f"<html>\n<head>\n<title> \n Duty Selection \n</title>\n</head>\n <body>\n{duty_list}</ul>\n</body>\n</html>")
+            
+   
     
 
 devops_apprenticeship_duty_list = [
