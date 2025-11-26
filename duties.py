@@ -13,8 +13,11 @@ devops_apprenticeship_duty_list = [
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
 ]
 
-# BOOTCAMP = []
-# print(BOOTCAMP)
+
+BOOTCAMP = [0, 1, 2, 3, 12]
+
+res = [devops_apprenticeship_duty_list[i] for i in BOOTCAMP]
+
 
 # - Bootcamp
 #     - Duties: 1,2,3,4,13

@@ -9,7 +9,7 @@ class Duties:
         env= Environment(loader = FileSystemLoader('templates'))
         template = env.get_template('template_duties.html')
         with open('all_duties.html', 'w') as f:
-            print(template.render(duties=self.duties, theme = theme), file = f)
+            print(template.render(duties=self.duties), file = f)
             
         for duty in self.duties:
              print("{0}\n".format(duty))
@@ -31,3 +31,9 @@ if __name__=="__main__":
 #  TODO: Make HTML better using CSS file. Test this? Should i like test it;s in futura etc?
 #  TODO: diff duties for diff times - testing
 # TODO: flask front end innit - testing
+
+# task three - dynamic theme name, dynamic naming of html file. 
+# remove the input into it's own class? would that work? how many behaviours can you have in a singlwe class = could i have one for like all of them and then call it depening on which?
+# remove any breaking of encapsulation and the hard coded stuff - hop;efully easier with dynamic namoing? 
+# get CSS working
+# hate the way the inputs done - look at that

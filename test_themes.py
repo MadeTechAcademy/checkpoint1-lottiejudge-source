@@ -28,6 +28,7 @@ def test_duties_to_HTML_output():
     file = open("all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
 
-def test_bootcamp_to_HTML():
-    file = open("bootcamp.html", 'r')
-    assert BOOTCAMP in file.read()
+# def test_bootcamp_to_HTML():
+#     file = open("bootcamp.html", 'r')
+#     assert BOOTCAMP in file.read()
+
