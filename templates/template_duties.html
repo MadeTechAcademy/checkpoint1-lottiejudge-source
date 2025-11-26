@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>{{ duty_list }}</ul>
+    <ul>
+    {% for duty in duties %}
+    <li>{{ duty }}</li>
+    {% endfor %}
+    </ul>
 </body>
 </html>

@@ -9,16 +9,16 @@ class Duties:
         File = open('templates/template_duties.html', 'r')
         content = File.read()
         File.close()
-        duty_list = '<ul>\n'
+ 
         for duty in self.duties:
-            duty_list += '<li>{}</li>\n'.format(duty)
-            print("{0}\n".format(duty))
-        duty_list +='</ul>'
+             print("{0}\n".format(duty))
+
         template = Template(content)
-        rendered_form = template.render(duty_list=duty_list)
+        rendered_form = template.render(duties=self.duties)
         output = open('all_duties.html', 'w')
         output.write(rendered_form)
         output.close()
+
 
 all_duties = Duties(devops_apprenticeship_duty_list)
 
