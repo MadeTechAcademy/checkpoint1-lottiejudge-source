@@ -13,7 +13,7 @@ class Duties:
         with open('bootcamp.html', 'w') as f:
             print(template.render(duties=theme), file = f)
 
-    def bootcamp_duties(self):
+    def automate_duties(self):
         theme = [self.duties[i] for i in AUTOMATE]
         env= Environment(loader = FileSystemLoader('templates'))
         template = env.get_template('template_duties.html')
