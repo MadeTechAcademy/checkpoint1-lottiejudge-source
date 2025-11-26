@@ -1,5 +1,5 @@
 from themes import Duties
-from duties import devops_apprenticeship_duty_list, BOOTCAMP
+from duties import devops_apprenticeship_duty_list
 
 correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.", 
@@ -18,7 +18,7 @@ def test_duty_list():
     assert len(devops_apprenticeship_duty_list) == 13
     assert devops_apprenticeship_duty_list == correct_list_of_duties
 
-def test_duty_list_class_output(capsys):
+def test_all_duty_list_terminal_output(capsys):
     duty_test_instance = Duties(correct_list_of_duties)
     duty_test_instance.create_duty_list()
     captured = capsys.readouterr()
@@ -28,7 +28,14 @@ def test_duties_to_HTML_output():
     file = open("all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
 
-# def test_bootcamp_to_HTML():
-#     file = open("bootcamp.html", 'r')
-#     assert BOOTCAMP in file.read()
+def test_bootcamp_to_HTML():
+    duty_test_instance = Duties(correct_list_of_duties)
+    duty_test_instance.bootcamp_duties()
+    file = open("bootcamp.html", 'r')
+    assert correct_list_of_duties[0] in file.read()
+
+
+# def test_automate_to_HTML():
+#     file = open("automate.html", 'r')
+#     assert correct_list_of_duties[0] not in file.read()
 
