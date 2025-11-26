@@ -16,6 +16,7 @@ devops_apprenticeship_duty_list = [
 
 BOOTCAMP = [0, 1, 2, 3, 12]
 AUTOMATE = [4, 6, 9]
+# HOUSTON = [5, 6, 9, 11]
 
 
 # - Bootcamp

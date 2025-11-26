@@ -4,32 +4,29 @@ from jinja2 import Environment, FileSystemLoader
 class Duties:
     def __init__(self, duties):
          self.duties = duties
-
-    
-    def bootcamp_duties(self):
-        theme = [self.duties[i] for i in BOOTCAMP]
+   
+    def template_creator(self, file_name, theme, title):
         env= Environment(loader = FileSystemLoader('templates'))
         template = env.get_template('template_duties.html')
-        with open('bootcamp.html', 'w') as f:
-            print(template.render(duties=theme), file = f)
+        with open(file_name, 'w') as f:
+            print(template.render(duties=theme, title=title), file = f)
+
+    def bootcamp_duties(self):
+        title = 'Bootcamp'
+        theme = [self.duties[i] for i in BOOTCAMP]
+        self.template_creator('bootcamp.html', theme, title)
 
     def automate_duties(self):
+        title = 'Automate'
         theme = [self.duties[i] for i in AUTOMATE]
-        env= Environment(loader = FileSystemLoader('templates'))
-        template = env.get_template('template_duties.html')
-        with open('automate.html', 'w') as f:
-            print(template.render(duties=theme), file = f)
-
-
+        self.template_creator('automate.html', theme, title)
 
     def create_duty_list(self):
-        env= Environment(loader = FileSystemLoader('templates'))
-        template = env.get_template('template_duties.html')
-        with open('all_duties.html', 'w') as f:
-            print(template.render(duties=self.duties), file = f)
-            
+        title = 'All Duties'
+        theme = self.duties
+        self.template_creator('all_duties.html', theme, title)
         for duty in self.duties:
-            print("{0}\n".format(duty))
+           print("{0}\n".format(duty))
 
 
 all_duties = Duties(devops_apprenticeship_duty_list)
@@ -39,7 +36,7 @@ if __name__=="__main__":
     Welcome to apprentice themes!\n
     Press (1) to list all the duties\n
     Press (2) to list the duties from the Bootcamp\n
-    Press (3) to list the dutie from Automate\n                            
+    Press (3) to list the duties from Automate\n                            
     Enter your choice:
     """)
     if user_duty_selection == '1':
@@ -49,7 +46,7 @@ if __name__=="__main__":
     if user_duty_selection == '3':
         all_duties.automate_duties()
 
-#  TODO: Make HTML better using CSS file. Test this? Should i like test it;s in futura etc?
+
 #  TODO: diff duties for diff times - testing
 # TODO: flask front end innit - testing
 

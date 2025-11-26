@@ -34,8 +34,16 @@ def test_bootcamp_to_HTML():
     file = open("bootcamp.html", 'r')
     assert correct_list_of_duties[0] in file.read()
 
-
 def test_automate_to_HTML():
+    duty_test_instance = Duties(correct_list_of_duties)
+    duty_test_instance.automate_duties()
     file = open("automate.html", 'r')
     assert correct_list_of_duties[0] not in file.read()
 
+# def test_houston_to_HTML():
+#     duty_test_instance = Duties(correct_list_of_duties)
+#     duty_test_instance.houston_duties()
+#     file = open("houston.html", 'r')
+#     assert correct_list_of_duties[0] not in file.read()
+
+# test for the title! 

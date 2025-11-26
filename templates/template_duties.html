@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/templates/style.css" >
-    <title>{{ theme }}</title>
+    <title>{{ title }}</title>
 </head>
 <body>
+    <h1>Duties for {{ title }}</h1>
     <ul>
     {% for duty in duties %}
     <li>{{ duty }}</li>
