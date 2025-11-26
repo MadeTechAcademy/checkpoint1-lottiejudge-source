@@ -12,3 +12,19 @@ devops_apprenticeship_duty_list = [
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.",
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
 ]
+
+# BOOTCAMP = []
+# print(BOOTCAMP)
+
+# - Bootcamp
+#     - Duties: 1,2,3,4,13
+# - Automate!
+#     - Duties: 5,7,10
+# - Houston, Prepare to Launch
+#     - Duties: 6,7,10,12
+# - Going Deeper
+#     - Duties: 11
+# - Assemble!
+#     - Duties: 8
+# - Call Security:
+#     - Duties: 9

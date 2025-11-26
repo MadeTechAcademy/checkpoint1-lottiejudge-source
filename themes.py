@@ -9,7 +9,7 @@ class Duties:
         env= Environment(loader = FileSystemLoader('templates'))
         template = env.get_template('template_duties.html')
         with open('all_duties.html', 'w') as f:
-            print(template.render(duties=self.duties), file = f)
+            print(template.render(duties=self.duties, theme = theme), file = f)
             
         for duty in self.duties:
              print("{0}\n".format(duty))

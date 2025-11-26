@@ -1,5 +1,5 @@
-from themes import devops_apprenticeship_duty_list
 from themes import Duties
+from duties import devops_apprenticeship_duty_list, BOOTCAMP
 
 correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.", 
@@ -27,3 +27,7 @@ def test_duty_list_class_output(capsys):
 def test_duties_to_HTML_output():
     file = open("all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
+
+def test_bootcamp_to_HTML():
+    file = open("bootcamp.html", 'r')
+    assert BOOTCAMP in file.read()
