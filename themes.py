@@ -1,23 +1,18 @@
 from duties import devops_apprenticeship_duty_list
-from jinja2 import Template
+from jinja2 import Environment, FileSystemLoader
 
 class Duties:
     def __init__(self, duties):
          self.duties = duties
          
     def create_duty_list(self):
-        File = open('templates/template_duties.html', 'r')
-        content = File.read()
-        File.close()
- 
+        env= Environment(loader = FileSystemLoader('templates'))
+        template = env.get_template('template_duties.html')
+        with open('all_duties.html', 'w') as f:
+            print(template.render(duties=self.duties), file = f)
+            
         for duty in self.duties:
              print("{0}\n".format(duty))
-
-        template = Template(content)
-        rendered_form = template.render(duties=self.duties)
-        output = open('all_duties.html', 'w')
-        output.write(rendered_form)
-        output.close()
 
 
 all_duties = Duties(devops_apprenticeship_duty_list)
