@@ -35,7 +35,7 @@ def test_bootcamp_to_HTML():
     assert correct_list_of_duties[0] in file.read()
 
 
-# def test_automate_to_HTML():
-#     file = open("automate.html", 'r')
-#     assert correct_list_of_duties[0] not in file.read()
+def test_automate_to_HTML():
+    file = open("automate.html", 'r')
+    assert correct_list_of_duties[0] not in file.read()
 
