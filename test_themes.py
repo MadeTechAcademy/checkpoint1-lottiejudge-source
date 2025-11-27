@@ -24,7 +24,6 @@ def test_all_duty_list_terminal_output(capsys):
     captured = capsys.readouterr()
     assert correct_list_of_duties[0] in captured.out
 
-
 def test_duties_to_HTML_output():
     file = open("renders/all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
@@ -67,9 +66,10 @@ def test_call_security_to_HTML():
     duty_test_instance = Duties(correct_list_of_duties)
     duty_test_instance.call_security_duties()
     file = open("renders/call_security.html", 'r')
-    assert theme_title in file.read()
+    assert correct_list_of_duties[8] in file.read()
 
 
+# recap - current tests, test that it outputs to HTML and that the title or a index exists, 
 
 # - Call Security:
 #     - Duties: 9

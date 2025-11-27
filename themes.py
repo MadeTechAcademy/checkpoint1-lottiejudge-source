@@ -40,7 +40,7 @@ class Duties:
     
     def call_security_duties(self):
         title = 'Call Security'
-        theme = [self.duties[i] for i in ASSEMBLE]
+        theme = [self.duties[i] for i in CALL_SECURITY]
         self.template_creator('call_security.html', theme, title)
 
     def create_duty_list(self):
