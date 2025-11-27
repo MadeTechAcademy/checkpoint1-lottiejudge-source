@@ -20,3 +20,5 @@ HOUSTON = [5, 6, 9, 11]
 GOING_DEEPER = [10]
 ASSEMBLE = [7]
 CALL_SECURITY = [8]
+
+# in clean code this was in a class that the variables then called - maybe look at that?

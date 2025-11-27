@@ -1,4 +1,5 @@
 from themes import Duties
+from user_options import User_option
 from duties import devops_apprenticeship_duty_list
 
 correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
@@ -68,8 +69,9 @@ def test_call_security_to_HTML():
     file = open("renders/call_security.html", 'r')
     assert correct_list_of_duties[8] in file.read()
 
-
-# recap - current tests, test that it outputs to HTML and that the title or a index exists, 
-
-# - Call Security:
-#     - Duties: 9
+# write a test for the input being in a seperate file and then being called using the method. Import etc? 
+def test_user_input_prints(capsys):
+    test_instance = User_option()
+    test_instance.print_options()
+    captured = capsys.readouterr()
+    assert 'Welcome to apprentice themes!\n' in captured
