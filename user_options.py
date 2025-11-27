@@ -7,19 +7,17 @@ class User_option:
     def print_options(self):
          print("Welcome to apprentice themes!")
 
-
-if __name__=="__main__":
     user_duty_selection = input("""
-    Welcome to apprentice themes!\n
-    Press (1) to list all the duties\n
-    Press (2) to list the duties from the Bootcamp\n
-    Press (3) to list the duties from Automate\n  
-    Press (4) to list the duties from Houston, Prepare to Launch\n   
-    press (5) to list the duties from Going Deeper\n
-    press (6) to list the duties from Assemble\n
-    press (7) to list the duties from Call Security\n                                                
-    Enter your choice:
-    """)
+        Welcome to apprentice themes!\n
+        Press (1) to list all the duties\n
+        Press (2) to list the duties from the Bootcamp\n
+        Press (3) to list the duties from Automate\n  
+        Press (4) to list the duties from Houston, Prepare to Launch\n   
+        press (5) to list the duties from Going Deeper\n
+        press (6) to list the duties from Assemble\n
+        press (7) to list the duties from Call Security\n                                                
+        Enter your choice:
+        """)
     if user_duty_selection == '1':
         all_duties.create_duty_list()
     if user_duty_selection == '2':
@@ -34,6 +32,11 @@ if __name__=="__main__":
         all_duties.assemble_duties()
     if user_duty_selection == '7':
         all_duties.call_security_duties()
+
+
+if __name__=="__main__":
+    duties_menu = User_option()
+    duties_menu.print_options()
 
 
 

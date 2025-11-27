@@ -70,7 +70,8 @@ def test_call_security_to_HTML():
     assert correct_list_of_duties[8] in file.read()
 
 # write a test for the input being in a seperate file and then being called using the method. Import etc? 
-def test_user_input_prints(capsys):
+def test_user_input_prints(capsys, monkeypatch):
+    monkeypatch.setattr('print_options.input')
     test_instance = User_option()
     test_instance.print_options()
     captured = capsys.readouterr()
