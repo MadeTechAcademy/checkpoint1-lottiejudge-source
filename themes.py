@@ -8,7 +8,7 @@ class Duties:
     def template_creator(self, file_name, theme, title):
         env= Environment(loader = FileSystemLoader('templates'))
         template = env.get_template('template_duties.html')
-        with open(file_name, 'w') as f:
+        with open(f"renders/{file_name}", 'w') as f:
             print(template.render(duties=theme, title=title), file = f)
         for duty in theme:
             print("{0}\n".format(duty))

@@ -24,41 +24,42 @@ def test_all_duty_list_terminal_output(capsys):
     captured = capsys.readouterr()
     assert correct_list_of_duties[0] in captured.out
 
+
 def test_duties_to_HTML_output():
-    file = open("all_duties.html", 'r')
+    file = open("renders/all_duties.html", 'r')
     assert devops_duty_one_string in file.read()
 
 def test_bootcamp_to_HTML():
     duty_test_instance = Duties(correct_list_of_duties)
     duty_test_instance.bootcamp_duties()
-    file = open("bootcamp.html", 'r')
+    file = open("renders/bootcamp.html", 'r')
     assert correct_list_of_duties[0] in file.read()
 
 def test_automate_to_HTML():
     duty_test_instance = Duties(correct_list_of_duties)
     duty_test_instance.automate_duties()
-    file = open("automate.html", 'r')
+    file = open("renders/automate.html", 'r')
     assert correct_list_of_duties[0] not in file.read()
 
 def test_houston_to_HTML():
     theme_title = 'Houston, Prepare to Launch'
     duty_test_instance = Duties(correct_list_of_duties)
     duty_test_instance.houston_duties()
-    file = open("houston.html", 'r')
+    file = open("renders/houston.html", 'r')
     assert theme_title in file.read()
 
 def test_going_deeper_to_HTML():
     theme_title = 'Going Deeper'
     duty_test_instance = Duties(correct_list_of_duties)
     duty_test_instance.going_deeper_duties()
-    file = open("going_deeper.html", 'r')
+    file = open("renders/going_deeper.html", 'r')
     assert theme_title in file.read()
 
 def test_assemble_to_HTML():
     theme_title = 'Assemble'
     duty_test_instance = Duties(correct_list_of_duties)
     duty_test_instance.assemble_duties()
-    file = open("assemble.html", 'r')
+    file = open("renders/assemble.html", 'r')
     assert theme_title in file.read()
 
 def test_call_security_to_HTML():
