@@ -40,10 +40,35 @@ def test_automate_to_HTML():
     file = open("automate.html", 'r')
     assert correct_list_of_duties[0] not in file.read()
 
-# def test_houston_to_HTML():
-#     duty_test_instance = Duties(correct_list_of_duties)
-#     duty_test_instance.houston_duties()
-#     file = open("houston.html", 'r')
-#     assert correct_list_of_duties[0] not in file.read()
+def test_houston_to_HTML():
+    theme_title = 'Houston, Prepare to Launch'
+    duty_test_instance = Duties(correct_list_of_duties)
+    duty_test_instance.houston_duties()
+    file = open("houston.html", 'r')
+    assert theme_title in file.read()
 
-# test for the title! 
+def test_going_deeper_to_HTML():
+    theme_title = 'Going Deeper'
+    duty_test_instance = Duties(correct_list_of_duties)
+    duty_test_instance.going_deeper_duties()
+    file = open("going_deeper.html", 'r')
+    assert theme_title in file.read()
+
+def test_assemble_to_HTML():
+    theme_title = 'Assemble'
+    duty_test_instance = Duties(correct_list_of_duties)
+    duty_test_instance.assemble_duties()
+    file = open("assemble.html", 'r')
+    assert theme_title in file.read()
+
+def test_call_security_to_HTML():
+    theme_title = 'Call Security'
+    duty_test_instance = Duties(correct_list_of_duties)
+    duty_test_instance.call_security_duties()
+    file = open("renders/call_security.html", 'r')
+    assert theme_title in file.read()
+
+
+
+# - Call Security:
+#     - Duties: 9
