@@ -75,3 +75,4 @@ def test_user_input_prints(capsys):
     test_instance.print_options()
     captured = capsys.readouterr()
     assert 'Welcome to apprentice themes!\n' in captured
+
