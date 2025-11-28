@@ -1,4 +1,3 @@
-
 from jinja2 import Environment, FileSystemLoader
 
 class Duties:
@@ -11,6 +10,4 @@ class Duties:
         with open(f"renders/{file_name}.html", 'w') as f:
             print(template.render(duties=theme, title=title), file = f)
         for duty in theme:
-            print("{0}\n".format(duty))
-
-    
+            print("{0}\n".format(duty))  

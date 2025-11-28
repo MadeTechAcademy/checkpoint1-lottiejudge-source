@@ -1,7 +1,4 @@
 
-# class Themes: Hm could i make this a dictionary that then matches up with the user input. so like for user input in dictionary key print theme?
-    
-
 ALL_DUTIES = [
     "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.",
@@ -72,12 +69,6 @@ ALL_DUTIES_THEME = {
     'title' : 'All Duties'
 }
 
-
-# in clean code this was in a class that the variables then called - maybe look at that? I think it could work as a dictionary and then 
-# that dictionary holds the like variables to pass into the method in themes? 
-# what would that remove. It would remove the need for multiple instances of the same method in the Duties.py and it would removed the if statements for a for loop in user
-# input? so each c;lass is doing one thing
-# does this need to be a class? 
 
 
 
