@@ -3,4 +3,5 @@ bin
 include
 lib
 *.cfg
+themes_and_duty.py
 

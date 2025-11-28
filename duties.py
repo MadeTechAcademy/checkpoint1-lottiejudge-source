@@ -1,24 +1,52 @@
-devops_apprenticeship_duty_list = [
-    "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
-    "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.",
-    "Duty 3 Engage in productive pair/mob programming to underpin the practice of peer review.",
-    "Duty 4 Work as part of an agile team, and explore new ways of working, rapidly responding to changing user needs and with a relentless focus on the user experience. Understand the importance of continual improvement within a blameless culture.",
-    "Duty 5 Build and operate a Continuous Integration (CI) capability, employing version control of source code and related artefacts.",
-    "Duty 6 Implement and improve release automation & orchestration, often using Application Programming Interfaces (API), as part of a continuous delivery and continuous deployment pipeline, ensuring that team(s) are able to deploy new code rapidly and safely.",
-    "Duty 7 Provision cloud infrastructure using APIs, continually improve infrastructure-as-code, considering use of industry leading technologies as they become available (e.g. Serverless, Containers).", "Duty 8 Evolve and define architecture, utilising the knowledge and experience of the team to design in an optimal user experience, scalability, security, high availability and optimal performance.",
-    "Duty 9 Apply leading security practices throughout the Software Development Lifecycle (SDLC).",
-    "Duty 10 Implement a good coverage of monitoring (metrics, logs), ensuring that alerts are visible, tuneable and actionable.",
-    "Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.",
-    "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.",
-    "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
-]
+from themes import ALL_DUTIES, BOOTCAMP, AUTOMATE, HOUSTON, GOING_DEEPER, ASSEMBLE, CALL_SECURITY, THEMES
+from jinja2 import Environment, FileSystemLoader
 
-BOOTCAMP = [0, 1, 2, 3, 12]
-AUTOMATE = [4, 6, 9]
-HOUSTON = [5, 6, 9, 11]
-GOING_DEEPER = [10]
-ASSEMBLE = [7]
-CALL_SECURITY = [8]
+class Duties:
+    def __init__(self, duties):
+         self.duties = duties
+   
+    def template_creator(self, file_name, theme, title):
+        env= Environment(loader = FileSystemLoader('templates'))
+        template = env.get_template('template_duties.html')
+        with open(f"renders/{file_name}", 'w') as f:
+            print(template.render(duties=theme, title=title), file = f)
+        for duty in theme:
+            print("{0}\n".format(duty))
 
-# in clean code this was in a class that the variables then called - maybe look at that? I think it could work as a dictionary and then 
-# that dictionary holds the like variables to pass into the method in themes? 
+    def bootcamp_duties(self):
+        title = 'Bootcamp'
+        theme = [self.duties[i] for i in BOOTCAMP]
+        self.template_creator('bootcamp.html', theme, title)
+
+    def automate_duties(self):
+        title = 'Automate'
+        theme = [self.duties[i] for i in AUTOMATE]
+        self.template_creator('automate.html', theme, title)
+    
+    def houston_duties(self):
+        title = 'Houston, Prepare to Launch'
+        theme = [self.duties[i] for i in HOUSTON]
+        self.template_creator('houston.html', theme, title)
+    
+    def going_deeper_duties(self):
+        title = 'Going Deeper'
+        theme = [self.duties[i] for i in GOING_DEEPER]
+        self.template_creator('going_deeper.html', theme, title)
+
+    def assemble_duties(self):
+        title = 'Assemble'
+        theme = [self.duties[i] for i in ASSEMBLE]
+        self.template_creator('assemble.html', theme, title)
+    
+    def call_security_duties(self):
+        title = 'Call Security'
+        theme = [self.duties[i] for i in CALL_SECURITY]
+        self.template_creator('call_security.html', theme, title)
+
+    def create_duty_list(self):
+        title = 'All Duties'
+        theme = self.duties
+        self.template_creator('all_duties.html', theme, title)
+
+
+

@@ -1,7 +1,7 @@
-from themes import Duties
-from duties import devops_apprenticeship_duty_list
+from duties import Duties
+from themes import ALL_DUTIES
 
-all_duties = Duties(devops_apprenticeship_duty_list)
+all_duties = Duties(ALL_DUTIES)
 
 class User_option:    
     def print_options(self):
