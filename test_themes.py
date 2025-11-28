@@ -2,7 +2,6 @@ from duties import Duties
 from user_options import User_option
 from themes import ALL_DUTIES, BOOTCAMP_THEME, ALL_DUTIES_THEME, AUTOMATE_THEME, HOUSTON_THEME, GOING_DEEPER_THEME, ASSEMBLE_THEME, CALL_SECURITY_THEME
     
-
 correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.", 
     "Duty 3 Engage in productive pair/mob programming to underpin the practice of peer review.", "Duty 4 Work as part of an agile team, and explore new ways of working, rapidly responding to changing user needs and with a relentless focus on the user experience. Understand the importance of continual improvement within a blameless culture.", 
@@ -14,6 +13,7 @@ correct_list_of_duties = ["Duty 1 Script and code in at least one general purpos
     "Duty 11 Keep up with cutting edge by committing to continual training and development - utilise web resources for self-learning; horizon scanning; active membership of professional bodies such as Meetup Groups; subscribe to relevant publications.",
     "Duty 12 Look to automate any manual tasks that are repeated, often using APIs.", "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience."
     ]
+
 devops_duty_one_string =  "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
 
 def test_duty_list():
@@ -62,12 +62,9 @@ def test_call_security_to_HTML():
     file = open("renders/call_security.html", 'r')
     assert correct_list_of_duties[8] in file.read()
 
-# write a test for the input being in a seperate file and then being called using the method. Import etc? 
 def test_user_input_prints(capsys, monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: '1')
     test_instance = User_option()
     test_instance.print_options()
     captured = capsys.readouterr()
     assert 'Duty 1' in captured.out
-
-

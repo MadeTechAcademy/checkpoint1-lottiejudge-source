@@ -1,5 +1,5 @@
 from duties import Duties
-from themes import ALL_DUTIES, BOOTCAMP_THEME, ALL_DUTIES_THEME, AUTOMATE_THEME, HOUSTON_THEME, GOING_DEEPER_THEME, ASSEMBLE_THEME, CALL_SECURITY_THEME
+from themes import BOOTCAMP_THEME, ALL_DUTIES_THEME, AUTOMATE_THEME, HOUSTON_THEME, GOING_DEEPER_THEME, ASSEMBLE_THEME, CALL_SECURITY_THEME
 
 class User_option:    
     def print_options(self):
@@ -21,7 +21,7 @@ class User_option:
                  '4': HOUSTON_THEME,
                  '5': GOING_DEEPER_THEME,
                  '6': ASSEMBLE_THEME,
-                 '7': ASSEMBLE_THEME
+                 '7': CALL_SECURITY_THEME
          }
          if user_duty_selection in theme_selection:
                 return Duties.template_creator(**theme_selection.get(user_duty_selection))
@@ -30,8 +30,3 @@ class User_option:
 if __name__=="__main__":
     duties_menu = User_option()
     duties_menu.print_options()
-
-# TODO: I feel like i could create a loop to populate and have one single function? or could I init it and then populate through that? but how would that word with user choice? it's pretty verbose
-# I think if i make the duties into a class and store it there- maybe a dictionary? dictionaries seemed to be considered bad on clean code? 
-#  
-
