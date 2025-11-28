@@ -71,9 +71,9 @@ def test_call_security_to_HTML():
 
 # write a test for the input being in a seperate file and then being called using the method. Import etc? 
 def test_user_input_prints(capsys, monkeypatch):
-    monkeypatch.setattr('print_options.input')
+    monkeypatch.setattr('builtins.input', lambda _: '1')
     test_instance = User_option()
     test_instance.print_options()
     captured = capsys.readouterr()
-    assert 'Welcome to apprentice themes!\n' in captured
+    assert 'Duty 1' in captured.out
 
