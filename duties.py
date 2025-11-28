@@ -13,7 +13,6 @@ devops_apprenticeship_duty_list = [
     "Duty 13 Accept ownership of changes; embody the DevOps culture of 'you build it, you run it', with a relentless focus on the user experience.",
 ]
 
-
 BOOTCAMP = [0, 1, 2, 3, 12]
 AUTOMATE = [4, 6, 9]
 HOUSTON = [5, 6, 9, 11]
