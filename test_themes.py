@@ -1,6 +1,8 @@
 from duties import Duties
 from user_options import User_option
-from themes import ALL_DUTIES
+from themes import ALL_DUTIES, BOOTCAMP_THEME, ALL_DUTIES_THEME, AUTOMATE_THEME, HOUSTON_THEME, GOING_DEEPER_THEME, ASSEMBLE_THEME, CALL_SECURITY_THEME
+    
+
 correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.", 
     "Duty 3 Engage in productive pair/mob programming to underpin the practice of peer review.", "Duty 4 Work as part of an agile team, and explore new ways of working, rapidly responding to changing user needs and with a relentless focus on the user experience. Understand the importance of continual improvement within a blameless culture.", 
@@ -19,8 +21,7 @@ def test_duty_list():
     assert ALL_DUTIES == correct_list_of_duties
 
 def test_all_duty_list_terminal_output(capsys):
-    duty_test_instance = Duties(correct_list_of_duties)
-    duty_test_instance.create_duty_list()
+    Duties.template_creator(**ALL_DUTIES_THEME)
     captured = capsys.readouterr()
     assert correct_list_of_duties[0] in captured.out
 
@@ -29,42 +30,35 @@ def test_duties_to_HTML_output():
     assert devops_duty_one_string in file.read()
 
 def test_bootcamp_to_HTML():
-    duty_test_instance = Duties(correct_list_of_duties)
-    duty_test_instance.bootcamp_duties()
+    Duties.template_creator(**BOOTCAMP_THEME)
     file = open("renders/bootcamp.html", 'r')
     assert correct_list_of_duties[0] in file.read()
 
 def test_automate_to_HTML():
-    duty_test_instance = Duties(correct_list_of_duties)
-    duty_test_instance.automate_duties()
+    Duties.template_creator(**AUTOMATE_THEME)
     file = open("renders/automate.html", 'r')
     assert correct_list_of_duties[0] not in file.read()
 
 def test_houston_to_HTML():
     theme_title = 'Houston, Prepare to Launch'
-    duty_test_instance = Duties(correct_list_of_duties)
-    duty_test_instance.houston_duties()
+    Duties.template_creator(**HOUSTON_THEME)
     file = open("renders/houston.html", 'r')
     assert theme_title in file.read()
 
 def test_going_deeper_to_HTML():
     theme_title = 'Going Deeper'
-    duty_test_instance = Duties(correct_list_of_duties)
-    duty_test_instance.going_deeper_duties()
+    Duties.template_creator(**GOING_DEEPER_THEME)
     file = open("renders/going_deeper.html", 'r')
     assert theme_title in file.read()
 
 def test_assemble_to_HTML():
     theme_title = 'Assemble'
-    duty_test_instance = Duties(correct_list_of_duties)
-    duty_test_instance.assemble_duties()
+    Duties.template_creator(**ASSEMBLE_THEME)
     file = open("renders/assemble.html", 'r')
     assert theme_title in file.read()
 
 def test_call_security_to_HTML():
-    theme_title = 'Call Security'
-    duty_test_instance = Duties(correct_list_of_duties)
-    duty_test_instance.call_security_duties()
+    Duties.template_creator(**CALL_SECURITY_THEME)
     file = open("renders/call_security.html", 'r')
     assert correct_list_of_duties[8] in file.read()
 

@@ -23,6 +23,54 @@ GOING_DEEPER = [10]
 ASSEMBLE = [7]
 CALL_SECURITY = [8]
 
+BOOTCAMP_THEME = {
+    'self' :'Bootcamp',
+    'file_name' : 'bootcamp',
+    'theme' :  [ALL_DUTIES[i] for i in BOOTCAMP],
+    'title' : 'Bootcamp'
+}
+
+AUTOMATE_THEME = {
+    'self' :'Automate',
+    'file_name' : 'automate',
+    'theme' :  [ALL_DUTIES[i] for i in AUTOMATE],
+    'title' : 'Automate'
+}
+
+HOUSTON_THEME = {
+    'self' :'Houston',
+    'file_name' : 'houston',
+    'theme' :  [ALL_DUTIES[i] for i in HOUSTON],
+    'title' : 'Houston, Prepare to Launch'
+}
+
+GOING_DEEPER_THEME = {
+    'self' :'Going Deeper',
+    'file_name' : 'going_deeper',
+    'theme' :  [ALL_DUTIES[i] for i in GOING_DEEPER],
+    'title' : 'Going Deeper'
+}
+
+ASSEMBLE_THEME = {
+    'self' :'Assemble',
+    'file_name' : 'assemble',
+    'theme' :  [ALL_DUTIES[i] for i in ASSEMBLE],
+    'title' : 'Assemble'
+}
+
+CALL_SECURITY_THEME = {
+    'self' :'Call Security',
+    'file_name' : 'call_security',
+    'theme' :  [ALL_DUTIES[i] for i in CALL_SECURITY],
+    'title' : 'Call Security'
+}
+
+ALL_DUTIES_THEME = {
+    'self' :'All Duties',
+    'file_name' : 'all_duties',
+    'theme' :  ALL_DUTIES,
+    'title' : 'All Duties'
+}
 
 
 # in clean code this was in a class that the variables then called - maybe look at that? I think it could work as a dictionary and then 

@@ -1,7 +1,7 @@
 from duties import Duties
-from themes import ALL_DUTIES
+from themes import ALL_DUTIES, BOOTCAMP_THEME, ALL_DUTIES_THEME, AUTOMATE_THEME, HOUSTON_THEME, GOING_DEEPER_THEME, ASSEMBLE_THEME, CALL_SECURITY_THEME
 
-all_duties = Duties(ALL_DUTIES)
+# all_duties = Duties(ALL_DUTIES)
 
 class User_option:    
     def print_options(self):
@@ -17,19 +17,20 @@ class User_option:
             Enter your choice:
             """)
          if user_duty_selection == '1':
-                    all_duties.create_duty_list()
+                    Duties.template_creator(**ALL_DUTIES_THEME)
          if user_duty_selection == '2':
-                    all_duties.bootcamp_duties()
+                    Duties.template_creator(**BOOTCAMP_THEME)
          if user_duty_selection == '3':
-                    all_duties.automate_duties()
+                   Duties.template_creator(**AUTOMATE_THEME)
          if user_duty_selection == '4':
-                    all_duties.houston_duties()
+                    Duties.template_creator(**HOUSTON_THEME)
          if user_duty_selection == '5':
-                    all_duties.going_deeper_duties()
+                    Duties.template_creator(**GOING_DEEPER_THEME)
          if user_duty_selection == '6':
-                    all_duties.assemble_duties()
+                    Duties.template_creator(**ASSEMBLE_THEME)
          if user_duty_selection == '7':
-                    all_duties.call_security_duties()
+                    Duties.template_creator(**CALL_SECURITY_THEME)
+                    
 
 
 if __name__=="__main__":
