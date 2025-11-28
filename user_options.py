@@ -2,6 +2,7 @@ from duties import Duties
 from themes import BOOTCAMP_THEME, ALL_DUTIES_THEME, AUTOMATE_THEME, HOUSTON_THEME, GOING_DEEPER_THEME, ASSEMBLE_THEME, CALL_SECURITY_THEME
 
 class User_option:    
+    
     def print_options(self):
          user_duty_selection = input("""
             Welcome to apprentice themes!\n

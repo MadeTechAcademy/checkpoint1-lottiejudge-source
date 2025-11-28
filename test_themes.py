@@ -62,9 +62,17 @@ def test_call_security_to_HTML():
     file = open("renders/call_security.html", 'r')
     assert correct_list_of_duties[8] in file.read()
 
+def test_call_security_theme(capsys, monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: '7')
+    test_instance = User_option()
+    test_instance.print_options()
+    captured = capsys.readouterr()
+    assert 'Call Security' in captured.out
+
 def test_user_input_prints(capsys, monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: '1')
     test_instance = User_option()
     test_instance.print_options()
     captured = capsys.readouterr()
     assert 'Duty 1' in captured.out
+
