@@ -1,10 +1,10 @@
-from themes import ALL_DUTIES, BOOTCAMP, AUTOMATE, HOUSTON, GOING_DEEPER, ASSEMBLE, CALL_SECURITY, THEMES
+from themes import ALL_DUTIES, BOOTCAMP, AUTOMATE, HOUSTON, GOING_DEEPER, ASSEMBLE, CALL_SECURITY
 from jinja2 import Environment, FileSystemLoader
 
 class Duties:
     def __init__(self, duties):
-         self.duties = duties
-   
+        self.duties = duties
+        
     def template_creator(self, file_name, theme, title):
         env= Environment(loader = FileSystemLoader('templates'))
         template = env.get_template('template_duties.html')

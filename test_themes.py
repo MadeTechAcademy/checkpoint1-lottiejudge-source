@@ -1,7 +1,6 @@
 from duties import Duties
 from user_options import User_option
-from themes import devops_apprenticeship_duty_list
-
+from themes import ALL_DUTIES
 correct_list_of_duties = ["Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage.",
     "Duty 2 Initiate and facilitate knowledge sharing and technical collaboration with teams and individuals, with a focus on supporting development of team members.", 
     "Duty 3 Engage in productive pair/mob programming to underpin the practice of peer review.", "Duty 4 Work as part of an agile team, and explore new ways of working, rapidly responding to changing user needs and with a relentless focus on the user experience. Understand the importance of continual improvement within a blameless culture.", 
@@ -16,8 +15,8 @@ correct_list_of_duties = ["Duty 1 Script and code in at least one general purpos
 devops_duty_one_string =  "Duty 1 Script and code in at least one general purpose language and at least one domain-specific language to orchestrate infrastructure, follow test driven development and ensure appropriate test coverage."
 
 def test_duty_list():
-    assert len(devops_apprenticeship_duty_list) == 13
-    assert devops_apprenticeship_duty_list == correct_list_of_duties
+    assert len(ALL_DUTIES) == 13
+    assert ALL_DUTIES == correct_list_of_duties
 
 def test_all_duty_list_terminal_output(capsys):
     duty_test_instance = Duties(correct_list_of_duties)
@@ -76,4 +75,5 @@ def test_user_input_prints(capsys, monkeypatch):
     test_instance.print_options()
     captured = capsys.readouterr()
     assert 'Duty 1' in captured.out
+
 

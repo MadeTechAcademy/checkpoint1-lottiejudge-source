@@ -23,10 +23,6 @@ GOING_DEEPER = [10]
 ASSEMBLE = [7]
 CALL_SECURITY = [8]
 
-THEMES = {
-     'All Duties': ['All Duties', ALL_DUTIES],
-     'bootcamp': ['Bootcamp', BOOTCAMP]
-    }
 
 
 # in clean code this was in a class that the variables then called - maybe look at that? I think it could work as a dictionary and then 
