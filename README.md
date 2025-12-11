@@ -62,19 +62,17 @@ Always reading from the list in memory might be troublesome, so feel free to ple
 After all this work, it still would be nice to have the results displayed on the screen. Could you find a Python library to do this? We can then give an option to the user to seen it on the screen, or download a file.
 
 # Assigment Terminal Commands:
- Getting started 
 
 How to set up the python virtual environment
 
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
+- python3 -m venv .
+- pip install -r requirements.txt
+- source bin/activate
 
 testing 
-pytest
+- pytest
 
 
 run the app
-python3 user_options.py  
+- python3 user_options.py  
 
