@@ -66,8 +66,8 @@ After all this work, it still would be nice to have the results displayed on the
 How to set up the python virtual environment
 
 - python3 -m venv .
-- pip install -r requirements.txt
 - source bin/activate
+- pip install -r requirements.txt
 
 testing 
 - pytest
